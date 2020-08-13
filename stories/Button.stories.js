@@ -1,36 +1,15 @@
 import React from 'react'
 
 import Button from '../components/button'
+import NavigationButton from '../components/navigation-button'
+import Navigation from '../components/navigation'
 
 export default {
-  title: 'Example/Button',
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
+  title: 'Example/Buttons'
 }
 
-const Template = (args) => <Button {...args} />
+export const Default = () => <Button>Save</Button>
 
-export const Primary = Template.bind({})
-Primary.args = {
-  primary: true,
-  label: 'Button'
-}
+export const NavButton = () => <NavigationButton>Save</NavigationButton>
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Button'
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  size: 'large',
-  label: 'Button'
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
-  label: 'Button'
-}
+export const Nav = () => <Navigation />
