@@ -4,6 +4,7 @@ import Photo from './photo'
 import { ArrowBottom } from './icons'
 
 import styles from './profile-box.module.css'
+
 import Button from './button'
 import TextBody from './text-body'
 
