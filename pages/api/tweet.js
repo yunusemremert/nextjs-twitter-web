@@ -1,7 +1,7 @@
 import Twit from '../../lib/twit'
 
 export default (req, res) => {
-  Twit.get('search/tweets', { q: '#Galatasaray', count: 10 }, function (
+  Twit.get('search/tweets', { q: '#Galatasaray', count: 25 }, function (
     err,
     data
   ) {

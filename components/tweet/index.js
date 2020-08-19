@@ -6,44 +6,44 @@ import styles from './style.module.css'
 import IconButton from '../icon-button'
 import * as Icon from '../icons'
 
-function Tweet({ name, slug, datetime, text }) {
+function Tweet({ ...props }) {
   return (
     <article className={styles.tweet}>
       {/* avatar */}
       <div className={styles.avatar}>
-        <Photo />
+        <Photo src={props.user.profile_image_url_https} />
       </div>
 
       {/* body */}
       <div className={styles.body}>
         <header className={styles.header}>
-          <span className={styles.name}>{name}</span>
-          <span>@{slug}</span> .
-          <span>{formatDistanceToNowStrict(datetime)}</span>
+          <span className={styles.name}>{props.user.name}</span>
+          <span>@{props.user.screen_name}</span> .
+          <span>{formatDistanceToNowStrict(new Date(props.created_at))}</span>
         </header>
 
-        <div className={styles.content}>{text}</div>
+        <div className={styles.content}>{props.text}</div>
 
         <footer className={styles.footer}>
           <div className={styles.footerButton}>
             <IconButton className={styles.actionButton}>
               <Icon.Reply />
             </IconButton>
-            <span>1</span>
+            {false && <span>1</span>}
           </div>
 
           <div className={styles.footerButton}>
             <IconButton className={styles.actionButton}>
               <Icon.Retweet />
             </IconButton>
-            <span>12</span>
+            {props.retweet_count && <span>{props.retweet_count}</span>}
           </div>
 
           <div className={styles.footerButton}>
             <IconButton className={styles.actionButton}>
-              <Icon.Like />
+              {props.favorited ? <Icon.LikeFill /> : <Icon.Like />}
             </IconButton>
-            <span>100</span>
+            {props.favorite_count && <span>{props.favorite_count}</span>}
           </div>
 
           <div className={styles.footerButton}>
