@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 
-import styles from './theme-select.module.css'
 import StoreContext from '../store'
 
 const THEME = {
@@ -8,6 +7,8 @@ const THEME = {
   dim: 'Dim',
   dark: 'Dark'
 }
+
+import styles from './theme-select.module.css'
 
 function ThemeSelect({}) {
   const store = useContext(StoreContext)

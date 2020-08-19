@@ -1,5 +1,6 @@
-import * as Icon from '../components/icons'
 import React from 'react'
+
+import * as Icon from '../components/icons'
 
 export default {
   TABLET_SIZE: 980,
