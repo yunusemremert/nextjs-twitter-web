@@ -60,7 +60,7 @@ function TweetModal({ onModalClose = () => {}, onClick = () => {} }) {
           </div>
           <Stack gap={20} className={styles.footer}>
             <IconButton className={styles.close} onClick={onClick}>
-              <Close />
+              <Close onClick={onModalClose} />
             </IconButton>
             <ThemeButton onClick={onSubmit}>Tweet</ThemeButton>
           </Stack>
