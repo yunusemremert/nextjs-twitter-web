@@ -7,6 +7,8 @@ import '../styles/app.css'
 export default function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState(null)
 
+  // user bilgileri tut ve componente context-provider ile gönder.
+
   useEffect(() => {
     const theme = localStorage.getItem('THEME') || 'light'
 
