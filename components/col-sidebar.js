@@ -11,6 +11,10 @@ import styles from './col-sidebar.module.css'
 function Sidebar({ flat }) {
   const [isShowModal, setIsShowModal] = React.useState(false)
 
+  const onModalClose = () => {
+    setIsShowModal(false)
+  }
+
   return (
     <div className={styles.sidebar}>
       <Navigation flat={flat} />
@@ -23,7 +27,7 @@ function Sidebar({ flat }) {
 
       {/* Tweet Popup */}
       {isShowModal && (
-        <TweetModal onClick={() => setIsShowModal(!isShowModal)} />
+        <TweetModal onModalClose={onModalClose} onClick={() => onModalClose} />
       )}
 
       <div className={styles.profile}>

@@ -17,7 +17,20 @@ function Layout({ children }) {
     <div className={styles.layout}>
       <Sidebar flat={size.width < CONST.DESKTOP_SIZE}>Sidebar</Sidebar>
       <Main>{children}</Main>
-      {size.width > CONST.TABLET_SIZE && <Extra>extra</Extra>}
+      {size.width > CONST.TABLET_SIZE && (
+        <Extra>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: 30,
+              fontSize: 20
+            }}
+          >
+            !Tweet gönderim kapalı.
+          </div>
+        </Extra>
+      )}
     </div>
   )
 }
